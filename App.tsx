@@ -1,0 +1,23 @@
+
+import React from 'react';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './pages/Home';
+import AnchorBand from './pages/AnchorBand';
+import CivicCube from './pages/CivicCube';
+import UnleashedSoon from './pages/UnleashedSoon';
+
+const App: React.FC = () => {
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/origin" element={<AnchorBand />} />
+        <Route path="/studio" element={<CivicCube />} />
+        <Route path="/unleashed" element={<UnleashedSoon />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </HashRouter>
+  );
+};
+
+export default App;
