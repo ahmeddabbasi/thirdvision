@@ -3,7 +3,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#08080A">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Third Vision AI | Control Surface</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,19 +19,27 @@
             --accent-gold: #BFA35B;
             --system-border: rgba(255, 255, 255, 0.08);
         }
+        
+        /* Safe area support for notched devices */
         body {
             background-color: var(--system-bg);
             background-image: 
                 linear-gradient(var(--system-border) 1px, transparent 1px),
                 linear-gradient(90deg, var(--system-border) 1px, transparent 1px);
             background-size: 32px 32px;
+            background-attachment: fixed;
             margin: 0;
             padding: 0;
+            padding-left: env(safe-area-inset-left);
+            padding-right: env(safe-area-inset-right);
             overflow-x: hidden;
             font-family: 'Inter', sans-serif;
             color: #FFFFFF;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-tap-highlight-color: transparent;
         }
+        
         body::after {
             content: "";
             position: fixed;
@@ -37,40 +48,60 @@
             width: 100vw;
             height: 100vh;
             background: url('https://grainy-gradients.vercel.app/noise.svg');
-            opacity: 0.03;
+            opacity: 0.025;
             pointer-events: none;
             z-index: 9999;
         }
+        
         * {
             border-radius: 0px !important;
         }
+        
         .font-mono {
             font-family: 'JetBrains Mono', monospace;
             letter-spacing: -0.02em;
         }
+        
         .text-accent { color: var(--accent-cyan); }
         .text-secondary { color: var(--accent-gold); }
         .border-system { border-color: var(--system-border); }
         
-        /* Custom scrollbar for a more technical look */
+        /* Custom scrollbar */
         ::-webkit-scrollbar { width: 4px; height: 4px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: var(--system-border); }
         ::-webkit-scrollbar-thumb:hover { background: var(--accent-cyan); }
 
+        /* GPU-accelerated scanline animation */
         .scanline {
             width: 100%;
             height: 2px;
             background: rgba(0, 229, 255, 0.1);
-            position: absolute;
+            position: fixed;
             top: 0;
+            left: 0;
             z-index: 10;
             pointer-events: none;
             animation: scan 4s linear infinite;
+            will-change: transform;
         }
         @keyframes scan {
-            0% { transform: translateY(0vh); }
-            100% { transform: translateY(100vh); }
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(0, 100vh, 0); }
+        }
+        
+        /* Touch-optimized active states */
+        a:active, button:active {
+            background-color: rgba(0, 229, 255, 0.1);
+            border-color: var(--accent-cyan);
+            transition: all 0.1s ease;
+        }
+        
+        /* Ensure proper spacing on mobile */
+        @media (max-width: 768px) {
+            body::after {
+                opacity: 0.02;
+            }
         }
     </style>
 <script type="importmap">

@@ -9,47 +9,47 @@ const AnchorBand: React.FC = () => {
 
   return (
     <Layout>
-      <div className="max-w-5xl mx-auto px-12 py-24 space-y-24">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 py-12 md:py-24 space-y-16 md:space-y-24">
         
         {/* Hero */}
-        <section className="space-y-8 border-b border-white/5 pb-12">
-          <div className="flex items-center space-x-4 text-xs font-mono uppercase tracking-widest text-white/40">
+        <section className="space-y-6 md:space-y-8 border-b border-white/5 pb-8 md:pb-12">
+          <div className="flex items-center space-x-3 md:space-x-4 text-[10px] md:text-xs font-mono uppercase tracking-widest text-white/40">
             <a href="#/" className="hover:text-white transition-colors">Home</a>
             <span>/</span>
             <span className="text-[#BFA35B]">Anchor Band</span>
           </div>
-          <h1 className="text-6xl font-bold tracking-tight text-white leading-[1.1]">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
             Anchor Band
           </h1>
-          <p className="text-3xl text-white/50 font-light leading-snug max-w-3xl">
+          <p className="text-2xl md:text-3xl text-white/50 font-light leading-snug max-w-3xl">
             Personal authority controller for AI execution rights.
           </p>
-          <div className="flex items-center space-x-6">
-            <span className="text-xs font-mono uppercase tracking-widest text-white/30 border border-white/10 px-4 py-2">Personal Device</span>
-            <span className="text-xs font-mono uppercase tracking-widest text-white/30 border border-white/10 px-4 py-2">Biometric Authority</span>
+          <div className="flex items-center space-x-4 md:space-x-6">
+            <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-white/30 border border-white/10 px-3 md:px-4 py-2">Personal Device</span>
+            <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-white/30 border border-white/10 px-3 md:px-4 py-2">Biometric Authority</span>
           </div>
         </section>
 
         {/* Overview */}
-        <section className="space-y-8 max-w-3xl">
-          <h2 className="text-sm font-mono uppercase tracking-[0.4em] text-secondary">Overview</h2>
-          <p className="text-2xl text-white/80 leading-relaxed font-light">
+        <section className="space-y-6 md:space-y-8 max-w-3xl">
+          <h2 className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-secondary">Overview</h2>
+          <p className="text-xl md:text-2xl text-white/80 leading-relaxed font-light">
             The Anchor Band is a wearable device that serves as the primary authority interface between human operators and AI execution systems.
           </p>
-          <p className="text-lg text-white/60 leading-relaxed">
+          <p className="text-base md:text-lg text-white/60 leading-relaxed">
             It binds AI execution rights to individual consent through continuous biometric verification and physical presence detection. No AI action can proceed without explicit authorization from an authenticated Anchor Band holder.
           </p>
         </section>
 
         {/* How It Works */}
-        <section className="space-y-12">
-          <h2 className="text-sm font-mono uppercase tracking-[0.4em] text-secondary">How It Works</h2>
+        <section className="space-y-8 md:space-y-12">
+          <h2 className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-secondary">How It Works</h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div className="border border-white/10 p-8 bg-white/[0.01] space-y-4">
-              <div className="text-[#BFA35B] font-mono text-xs uppercase tracking-widest">Step 01</div>
-              <h3 className="text-xl font-bold text-white">Biometric Binding</h3>
-              <p className="text-base text-white/60 leading-relaxed">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10">
+            <div className="border border-white/10 p-6 md:p-8 bg-white/[0.01] space-y-4">
+              <div className="text-[#BFA35B] font-mono text-[10px] md:text-xs uppercase tracking-widest">Step 01</div>
+              <h3 className="text-lg md:text-xl font-bold text-white">Biometric Binding</h3>
+              <p className="text-sm md:text-base text-white/60 leading-relaxed">
                 The band continuously verifies the wearer's identity through multi-factor biometric sensors (pulse pattern, galvanic skin response, temperature signature). Identity verification occurs at the hardware level, not the software layer.
               </p>
             </div>
@@ -81,9 +81,9 @@ const AnchorBand: React.FC = () => {
         </section>
 
         {/* Key Features */}
-        <section className="space-y-10 py-12 border-t border-white/5">
-          <h2 className="text-sm font-mono uppercase tracking-[0.4em] text-secondary">Key Capabilities</h2>
-          <ul className="space-y-8 text-white/70 list-none font-light text-lg">
+        <section className="space-y-8 md:space-y-10 py-8 md:py-12 border-t border-white/5">
+          <h2 className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-secondary">Key Capabilities</h2>
+          <ul className="space-y-6 md:space-y-8 text-white/70 list-none font-light text-base md:text-lg">
             <li className="flex items-start space-x-6">
               <span className="text-[#BFA35B] font-mono text-sm mt-1 min-w-[60px]">/AUTH</span>
               <div className="space-y-2">
@@ -116,9 +116,9 @@ const AnchorBand: React.FC = () => {
         </section>
 
         {/* Use Cases */}
-        <section className="space-y-10">
-          <h2 className="text-sm font-mono uppercase tracking-[0.4em] text-secondary">Deployment Contexts</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section className="space-y-8 md:space-y-10">
+          <h2 className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-secondary">Deployment Contexts</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <div className="space-y-4">
               <h3 className="text-lg font-bold text-white">Executive Decision Systems</h3>
               <p className="text-sm text-white/50 leading-relaxed">

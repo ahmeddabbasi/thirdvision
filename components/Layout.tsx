@@ -9,6 +9,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, showNav = true }) => {
   const [timestamp, setTimestamp] = useState(new Date().toISOString());
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -17,30 +18,91 @@ const Layout: React.FC<LayoutProps> = ({ children, showNav = true }) => {
     return () => clearInterval(timer);
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [children]);
+
   return (
     <div className="min-h-screen flex flex-col relative bg-system">
-      {/* Header (Top, Minimal) */}
-      <header className="h-32 flex items-center px-12 justify-between sticky top-0 bg-system/80 backdrop-blur-sm z-50">
+      {/* Header (Responsive) */}
+      <header className="h-20 md:h-32 flex items-center px-6 md:px-12 justify-between sticky top-0 bg-system/80 backdrop-blur-sm z-50">
         <div className="flex items-center">
-          <Logo className="h-12 w-auto" />
+          <Logo className="h-8 md:h-12 w-auto" />
         </div>
         
         {showNav && (
-          <nav className="flex space-x-10 text-[13px] font-mono font-semibold uppercase tracking-[0.2em] text-[#BFA35B]">
-            <a href="#/unleashed?from=foundation" className="hover:text-white transition-colors">Foundation</a>
-            <a href="#/origin" className="hover:text-white transition-colors">Origin</a>
-            <a href="#/studio" className="hover:text-white transition-colors">Studio</a>
-          </nav>
+          <>
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex space-x-10 text-[13px] font-mono font-semibold uppercase tracking-[0.2em] text-[#BFA35B]">
+              <a href="#/unleashed?from=foundation" className="hover:text-white transition-colors">Foundation</a>
+              <a href="#/origin" className="hover:text-white transition-colors">Origin</a>
+              <a href="#/studio" className="hover:text-white transition-colors">Studio</a>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden flex flex-col space-y-1 p-2 border border-white/10 hover:border-[#BFA35B] transition-colors"
+              aria-label="Toggle menu"
+            >
+              <span className="block w-6 h-0.5 bg-[#BFA35B]" style={{width: mobileMenuOpen ? '24px' : '24px'}}></span>
+              <span className="block w-5 h-0.5 bg-[#BFA35B]" style={{width: mobileMenuOpen ? '20px' : '20px'}}></span>
+              <span className="block w-4 h-0.5 bg-[#BFA35B]" style={{width: mobileMenuOpen ? '16px' : '16px'}}></span>
+            </button>
+          </>
         )}
       </header>
+
+      {/* Mobile Menu Overlay */}
+      {showNav && mobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 bg-[#08080A] bg-opacity-98 z-40 flex items-center justify-center">
+          <nav className="flex flex-col space-y-8 text-center">
+            <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/30 mb-4">
+              [ SYSTEM_MENU ]
+            </div>
+            <a 
+              href="#/unleashed?from=foundation" 
+              className="text-2xl font-mono font-semibold uppercase tracking-[0.2em] text-[#BFA35B] hover:text-white transition-colors active:text-accent"
+            >
+              Foundation
+            </a>
+            <a 
+              href="#/origin" 
+              className="text-2xl font-mono font-semibold uppercase tracking-[0.2em] text-[#BFA35B] hover:text-white transition-colors active:text-accent"
+            >
+              Origin
+            </a>
+            <a 
+              href="#/studio" 
+              className="text-2xl font-mono font-semibold uppercase tracking-[0.2em] text-[#BFA35B] hover:text-white transition-colors active:text-accent"
+            >
+              Studio
+            </a>
+            <button 
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-8 text-xs font-mono uppercase tracking-widest text-white/40 border border-white/10 px-6 py-3 hover:bg-white hover:text-black transition-all"
+            >
+              Close
+            </button>
+          </nav>
+        </div>
+      )}
 
       {/* Main Content */}
       <main className="flex-grow">
         {children}
       </main>
 
-      {/* Footer (Minimal, Required) */}
-      <footer className="p-12 border-t border-white/5 bg-[#050507] font-mono text-[10px] text-white/40">
+      {/* Footer (Responsive with Safe Areas) */}
+      <footer 
+        className="p-6 md:p-12 border-t border-white/5 bg-[#050507] font-mono text-[10px] text-white/40"
+        style={{
+          paddingLeft: 'max(1.5rem, env(safe-area-inset-left))',
+          paddingRight: 'max(1.5rem, env(safe-area-inset-right))',
+          paddingBottom: 'max(1.5rem, env(safe-area-inset-bottom))'
+        }}
+      >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start space-y-6 md:space-y-0">
           <div className="space-y-2 uppercase tracking-widest">
             <div className="flex space-x-4">
