@@ -27,9 +27,9 @@ const Layout: React.FC<LayoutProps> = ({ children, showNav = true }) => {
     <div className="min-h-screen flex flex-col relative bg-system">
       {/* Header (Responsive) */}
       <header className="h-20 md:h-32 flex items-center px-6 md:px-12 justify-between sticky top-0 bg-system/80 backdrop-blur-sm z-50">
-        <div className="flex items-center">
+        <a href="#/" className="flex items-center cursor-pointer">
           <Logo className="h-8 md:h-12 w-auto" />
-        </div>
+        </a>
         
         {showNav && (
           <>
@@ -104,7 +104,7 @@ const Layout: React.FC<LayoutProps> = ({ children, showNav = true }) => {
         }}
       >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start space-y-6 md:space-y-0">
-          <div className="space-y-2 uppercase tracking-widest">
+          <div className="space-y-3 tracking-wide">
             <div className="flex space-x-4">
               <span>SYSTEM_STATUS:</span>
               <span className="text-white">PROTOTYPE_ACTIVE</span>
@@ -113,9 +113,28 @@ const Layout: React.FC<LayoutProps> = ({ children, showNav = true }) => {
               <span>TIMESTAMP:</span>
               <span className="text-white tabular-nums">{timestamp}</span>
             </div>
-            <div className="flex space-x-4">
-              <span>CONTACT:</span>
-              <a href="mailto:registry@thirdvision.ai" className="text-white underline underline-offset-4 decoration-white/20 hover:decoration-white">registry@thirdvision.ai</a>
+            
+            <div className="pt-4 space-y-3 text-[11px] normal-case tracking-normal text-[#BFA35B]">
+              <div className="text-white font-semibold uppercase tracking-wider">Third Vision AI</div>
+              
+              <div className="space-y-1">
+                <div>Head Office — South Africa</div>
+                <div>Breakwater Boulevard</div>
+                <div>V&A Waterfront</div>
+                <div>Cape Town, South Africa</div>
+                <div className="pt-1">
+                  <span>General Inquiries: </span>
+                  <a href="mailto:jay@thirdvisionai.com" className="hover:text-white transition-colors">jay@thirdvisionai.com</a>
+                </div>
+              </div>
+              
+              <div className="space-y-1 pt-2">
+                <div>U.S. Offices</div>
+                <div>Boston, Massachusetts, USA 02215</div>
+                <div className="pt-1">
+                  <a href="mailto:winn@thirdvisionai.com" className="hover:text-white transition-colors">winn@thirdvisionai.com</a>
+                </div>
+              </div>
             </div>
           </div>
           

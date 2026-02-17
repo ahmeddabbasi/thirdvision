@@ -2,6 +2,7 @@
 import React from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
+import ThankYou from './pages/ThankYou';
 import AnchorBand from './pages/AnchorBand';
 import CivicCube from './pages/CivicCube';
 import UnleashedSoon from './pages/UnleashedSoon';
@@ -11,6 +12,7 @@ const App: React.FC = () => {
     <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/origin" element={<AnchorBand />} />
         <Route path="/studio" element={<CivicCube />} />
         <Route path="/unleashed" element={<UnleashedSoon />} />

@@ -1,0 +1,13 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Eye Outline -->
+  <ellipse cx="16" cy="16" rx="12" ry="8" stroke="#BFA35B" stroke-width="1.5" fill="none"/>
+  <ellipse cx="16" cy="16" rx="9" ry="6" stroke="#BFA35B" stroke-width="0.5" opacity="0.5" fill="none"/>
+  
+  <!-- Pupil -->
+  <circle cx="16" cy="16" r="4" fill="#00E5FF" opacity="0.8"/>
+  <circle cx="16" cy="16" r="4" stroke="#00E5FF" stroke-width="1" fill="none"/>
+  
+  <!-- Cross inside pupil -->
+  <path d="M16 13.5V18.5M13.5 16H18.5" stroke="white" stroke-width="0.8" opacity="0.8"/>
+  <path d="M16 14.5L17.5 16L16 17.5L14.5 16L16 14.5Z" fill="white"/>
+</svg>
