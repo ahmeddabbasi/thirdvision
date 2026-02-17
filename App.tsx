@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import ThankYou from './pages/ThankYou';
 import AnchorBand from './pages/AnchorBand';
 import CivicCube from './pages/CivicCube';
-import UnleashedSoon from './pages/UnleashedSoon';
 
 const App: React.FC = () => {
   return (
@@ -15,7 +14,6 @@ const App: React.FC = () => {
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/origin" element={<AnchorBand />} />
         <Route path="/studio" element={<CivicCube />} />
-        <Route path="/unleashed" element={<UnleashedSoon />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </HashRouter>

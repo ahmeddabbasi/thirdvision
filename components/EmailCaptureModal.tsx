@@ -49,7 +49,12 @@ const EmailCaptureModal: React.FC<EmailCaptureModalProps> = ({ open, onClose }) 
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
       <div className="bg-[#141417] border border-white/10 rounded-lg p-8 w-full max-w-md shadow-2xl relative">
         <button onClick={onClose} className="absolute top-3 right-3 text-white/40 hover:text-accent text-xl font-bold">×</button>
-        <h2 className="text-xl font-bold text-white mb-4">Access the Execution Authority Framework</h2>
+        <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+          <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+          Download the Flight Manual
+        </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"

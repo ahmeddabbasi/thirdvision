@@ -35,7 +35,6 @@ const Layout: React.FC<LayoutProps> = ({ children, showNav = true }) => {
           <>
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-10 text-[13px] font-mono font-semibold uppercase tracking-[0.2em] text-[#BFA35B]">
-              <a href="#/unleashed?from=foundation" className="hover:text-white transition-colors">Foundation</a>
               <a href="#/origin" className="hover:text-white transition-colors">Origin</a>
               <a href="#/studio" className="hover:text-white transition-colors">Studio</a>
             </nav>
@@ -61,12 +60,6 @@ const Layout: React.FC<LayoutProps> = ({ children, showNav = true }) => {
             <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/30 mb-4">
               [ SYSTEM_MENU ]
             </div>
-            <a 
-              href="#/unleashed?from=foundation" 
-              className="text-2xl font-mono font-semibold uppercase tracking-[0.2em] text-[#BFA35B] hover:text-white transition-colors active:text-accent"
-            >
-              Foundation
-            </a>
             <a 
               href="#/origin" 
               className="text-2xl font-mono font-semibold uppercase tracking-[0.2em] text-[#BFA35B] hover:text-white transition-colors active:text-accent"
@@ -106,11 +99,11 @@ const Layout: React.FC<LayoutProps> = ({ children, showNav = true }) => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start space-y-6 md:space-y-0">
           <div className="space-y-3 tracking-wide">
             <div className="flex space-x-4">
-              <span>SYSTEM_STATUS:</span>
+              <span className="font-semibold">SYSTEM_STATUS:</span>
               <span className="text-white">PROTOTYPE_ACTIVE</span>
             </div>
             <div className="flex space-x-4">
-              <span>TIMESTAMP:</span>
+              <span className="font-semibold">TIMESTAMP:</span>
               <span className="text-white tabular-nums">{timestamp}</span>
             </div>
             
@@ -139,8 +132,9 @@ const Layout: React.FC<LayoutProps> = ({ children, showNav = true }) => {
           </div>
           
           <div className="md:text-right space-y-4">
-            <div className="text-secondary opacity-70 uppercase tracking-[0.2em] leading-relaxed italic max-w-xs ml-auto">
-              You are not building a website. You are building a controlled environment for trust transfer.
+            <div className="text-accent/90 uppercase tracking-[0.15em] leading-relaxed font-semibold max-w-xs ml-auto">
+              Third Vision AI<br />
+              <span className="text-white/60 text-[10px] tracking-[0.2em]">Infrastructure for Controlled Trust Transfer</span>
             </div>
             <div className="text-[9px] uppercase tracking-widest">
               &copy; 2024 Third Vision Systems // Execution Governed
