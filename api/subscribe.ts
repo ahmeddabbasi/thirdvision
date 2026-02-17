@@ -3,6 +3,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 // Brevo API Configuration (keep secret on server-side)
 const BREVO_API_KEY = process.env.BREVO_API_KEY;
 const BREVO_LIST_ID = process.env.BREVO_LIST_ID || '5';
+const SITE_URL = process.env.SITE_URL || process.env.VERCEL_URL || 'https://thirdvisionai.com';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Only allow POST requests
@@ -69,14 +70,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
               <p>Thank you for your interest in Third Vision AI.</p>
               
               <p style="margin: 30px 0;">
-                <a href="https://thirdvisionai.com/resources/ThirdVision-AI%20Enterprise.pdf" 
+                <a href="https://${SITE_URL}/resources/ThirdVision-AI%20Enterprise.pdf" 
                    style="display: inline-block; background-color: #BFA35B; color: #000; padding: 15px 30px; text-decoration: none; font-weight: bold; font-size: 16px; border-radius: 4px;">
                   Download Your Framework (PDF)
                 </a>
               </p>
               
               <p style="color: #666; font-size: 14px;">
-                Or view online: <a href="https://thirdvisionai.com/#/thank-you" style="color: #BFA35B;">Access Document</a>
+                Or view online: <a href="https://${SITE_URL}/#/thank-you" style="color: #BFA35B;">Access Document</a>
               </p>
               
               <hr style="border: 0; border-top: 1px solid #ddd; margin: 30px 0;">
