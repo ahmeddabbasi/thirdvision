@@ -33,7 +33,10 @@ const Home: React.FC = memo(() => {
             The End of Identity Risk. The Beginning of Physical Truth.
           </h1>
           <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-3xl">
-            Third Vision AI provides presence-based infrastructure to verify people, actions, and execution events in physical environments — without relying on centralized identity databases.
+            Third Vision AI builds execution authority infrastructure. We ensure AI systems and operational workflows cannot act without verified human presence, cryptographic binding, and deterministic policy enforcement. Designed for logistics corridors, regulated industries, and sovereign digital infrastructure across Africa.
+          </p>
+          <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-3xl">
+            Third Vision AI provides presence-based infrastructure to verify people, actions, and execution events in physical environments, without relying on centralized identity databases.
           </p>
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 pt-4 items-start">
             <button

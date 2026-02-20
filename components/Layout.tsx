@@ -115,7 +115,7 @@ const Layout: React.FC<LayoutProps> = memo(({ children, showNav = true }) => {
           <div className="space-y-3 tracking-wide">
             <div className="flex space-x-4">
               <span className="font-semibold">SYSTEM_STATUS:</span>
-              <span className="text-white">PROTOTYPE_ACTIVE</span>
+              <span className="text-white">STATUS: INSTITUTIONAL PILOT PHASE</span>
             </div>
             <div className="flex space-x-4">
               <span className="font-semibold">TIMESTAMP:</span>

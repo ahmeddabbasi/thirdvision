@@ -22,7 +22,7 @@ const AnchorBand: React.FC = () => {
             Anchor Band
           </h1>
           <p className="text-2xl md:text-3xl text-white/50 font-light leading-snug max-w-3xl">
-            Personal authority controller for AI execution rights.
+            Human presence authentication layer for AI execution governance.
           </p>
           <div className="flex items-center space-x-4 md:space-x-6">
             <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-white/30 border border-white/10 px-3 md:px-4 py-2">Personal Device</span>
@@ -169,7 +169,7 @@ const AnchorBand: React.FC = () => {
               </div>
               <div className="space-y-3">
                 <span className="block text-secondary opacity-80 text-[11px]">Status</span>
-                <span className="text-white leading-relaxed">Prototype // Q2 2026 Alpha Testing</span>
+                <span className="text-white leading-relaxed">STATUS: INSTITUTIONAL PILOT PHASE</span>
               </div>
             </div>
           </div>

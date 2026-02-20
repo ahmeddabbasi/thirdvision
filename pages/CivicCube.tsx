@@ -203,7 +203,7 @@ const CivicCube: React.FC = () => {
               </div>
               <div className="space-y-3">
                 <span className="block text-secondary opacity-80 text-[11px]">Status</span>
-                <span className="text-white leading-relaxed">Prototype // Closed Beta Q3 2026</span>
+                <span className="text-white leading-relaxed">STATUS: INSTITUTIONAL PILOT PHASE</span>
               </div>
             </div>
           </div>

@@ -82,66 +82,56 @@ const Recognition: React.FC = memo(() => {
         </section>
 
         {/* About Section */}
-        <section className="space-y-6 py-8 border-t border-white/5">
+        <section className="space-y-8 md:space-y-10 py-8 md:py-12 border-t border-white/5">
           <h3 className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-secondary">
             About
           </h3>
           
-          <div className="space-y-4 text-white/80 leading-relaxed">
-            <p>
-              Jayshree Mallaya is a recognized leader in AI Safety and Ethics, driving critical conversations 
-              around responsible AI development and deployment. Her work focuses on ensuring that artificial 
-              intelligence systems are designed and implemented with human values, safety, and ethical 
-              considerations at their core.
-            </p>
-            
-            <p>
-              With a deep commitment to governance frameworks and accountability in AI systems, she has 
-              established herself as a thought leader in the space, contributing to both policy development 
-              and practical implementation strategies that prioritize safety and ethical considerations.
-            </p>
-          </div>
-        </section>
-
-        {/* Achievements & Contributions */}
-        <section className="space-y-6 py-8 border-t border-white/5">
-          <h3 className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-secondary">
-            Key Achievements & Contributions
-          </h3>
-          
-          <div className="space-y-4">
-            <div className="border-l-2 border-accent/30 pl-6 py-2">
-              <div className="text-accent font-mono text-sm mb-2">Flavikon Recognition</div>
-              <p className="text-white/70 text-base">
-                Ranked #2 in South Africa and #404 globally for AI Safety and Ethics, 
-                demonstrating consistent leadership and impact in the field.
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Founder */}
+            <div className="group bg-white/5 border-l-4 border-accent p-6 md:p-8 hover:bg-white/[0.07] transition-all">
+              <div className="flex items-start space-x-4">
+                <div className="text-accent text-3xl md:text-4xl">●</div>
+                <div className="space-y-1">
+                  <div className="text-accent font-mono text-xs uppercase tracking-wider">Role</div>
+                  <p className="text-white text-lg md:text-xl font-semibold">Founder of Third Vision AI</p>
+                </div>
+              </div>
             </div>
 
-            <div className="border-l-2 border-accent/30 pl-6 py-2">
-              <div className="text-accent font-mono text-sm mb-2">Ethical AI Advocacy</div>
-              <p className="text-white/70 text-base">
-                Champion for responsible AI development practices, ensuring technology 
-                serves humanity while maintaining safety and ethical standards.
-              </p>
+            {/* Leadership */}
+            <div className="group bg-white/5 border-l-4 border-accent p-6 md:p-8 hover:bg-white/[0.07] transition-all">
+              <div className="flex items-start space-x-4">
+                <div className="text-accent text-3xl md:text-4xl">●</div>
+                <div className="space-y-1">
+                  <div className="text-accent font-mono text-xs uppercase tracking-wider">Expertise</div>
+                  <p className="text-white text-lg md:text-xl font-semibold">Recognized AI Safety & Tech Ethics Leader</p>
+                </div>
+              </div>
             </div>
 
-            <div className="border-l-2 border-accent/30 pl-6 py-2">
-              <div className="text-accent font-mono text-sm mb-2">Thought Leadership</div>
-              <p className="text-white/70 text-base">
-                Active contributor to the global dialogue on AI governance, safety protocols, 
-                and ethical frameworks for emerging technologies.
-              </p>
+            {/* Ranking */}
+            <div className="group bg-white/5 border-l-4 border-accent p-6 md:p-8 hover:bg-white/[0.07] transition-all">
+              <div className="flex items-start space-x-4">
+                <div className="text-accent text-3xl md:text-4xl">●</div>
+                <div className="space-y-1">
+                  <div className="text-accent font-mono text-xs uppercase tracking-wider">Recognition</div>
+                  <p className="text-white text-lg md:text-xl font-semibold">Ranked #2 in South Africa</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Focus */}
+            <div className="group bg-white/5 border-l-4 border-accent p-6 md:p-8 hover:bg-white/[0.07] transition-all">
+              <div className="flex items-start space-x-4">
+                <div className="text-accent text-3xl md:text-4xl">●</div>
+                <div className="space-y-1">
+                  <div className="text-accent font-mono text-xs uppercase tracking-wider">Focus Areas</div>
+                  <p className="text-white text-lg md:text-xl font-semibold">Governance, Accountability, and Safe AI Deployment</p>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
-
-        {/* Quote or Mission Statement */}
-        <section className="py-6 md:py-8 border-t border-white/5">
-          <blockquote className="text-center text-white/60 italic text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto px-4">
-            "Building a future where artificial intelligence serves humanity with safety, 
-            ethics, and accountability at its foundation."
-          </blockquote>
         </section>
 
         <footer className="pt-12 opacity-20 font-mono text-[10px] text-center">
