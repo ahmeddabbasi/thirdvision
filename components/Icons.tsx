@@ -1,7 +1,7 @@
 
-import React from 'react';
+import React, { memo } from 'react';
 
-export const Logo: React.FC<{ className?: string }> = ({ className }) => (
+export const Logo = memo<{ className?: string }>(({ className }) => (
   <svg width="240" height="60" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
     {/* Eye Outline */}
     <path d="M20 50C20 50 50 20 100 20C150 20 180 50 180 50C180 50 150 80 100 80C50 80 20 50 20 50Z" stroke="#BFA35B" strokeWidth="4" />
@@ -20,27 +20,35 @@ export const Logo: React.FC<{ className?: string }> = ({ className }) => (
     {/* Slogan */}
     <text x="70" y="96" fontFamily="Inter" fontStyle="italic" fontSize="14" fill="#BFA35B" letterSpacing="0.05em">Where Intuition Meets Intelligence</text>
   </svg>
-);
+));
 
-export const AnchorBand: React.FC<{ className?: string }> = ({ className }) => (
+Logo.displayName = 'Logo';
+
+export const AnchorBand = memo<{ className?: string }>(({ className }) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
     <path d="M2 12H22" stroke="currentColor" strokeWidth="1.5"/>
     <path d="M7 7V17" stroke="currentColor" strokeWidth="1.5"/>
     <path d="M17 7V17" stroke="currentColor" strokeWidth="1.5"/>
     <rect x="10" y="10" width="4" height="4" stroke="currentColor" strokeWidth="1.5"/>
   </svg>
-);
+));
 
-export const CivicCube: React.FC<{ className?: string }> = ({ className }) => (
+AnchorBand.displayName = 'AnchorBand';
+
+export const CivicCube = memo<{ className?: string }>(({ className }) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
     <path d="M12 2L2 7V17L12 22L22 17V7L12 2" stroke="currentColor" strokeWidth="1.5"/>
     <path d="M2 7L12 12L22 7" stroke="currentColor" strokeWidth="1.5"/>
     <path d="M12 12V22" stroke="currentColor" strokeWidth="1.5"/>
   </svg>
-);
+));
 
-export const ChevronRight: React.FC<{ className?: string }> = ({ className }) => (
+CivicCube.displayName = 'CivicCube';
+
+export const ChevronRight = memo<{ className?: string }>(({ className }) => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
     <path d="M9 5L16 12L9 19" stroke="currentColor" strokeWidth="2" />
   </svg>
-);
+));
+
+ChevronRight.displayName = 'ChevronRight';

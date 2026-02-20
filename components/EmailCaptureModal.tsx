@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, memo, useCallback } from 'react';
 
 interface EmailCaptureModalProps {
   open: boolean;
   onClose: () => void;
 }
 
-const EmailCaptureModal: React.FC<EmailCaptureModalProps> = ({ open, onClose }) => {
+const EmailCaptureModal: React.FC<EmailCaptureModalProps> = memo(({ open, onClose }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
     setLoading(true);
@@ -41,7 +41,7 @@ const EmailCaptureModal: React.FC<EmailCaptureModalProps> = ({ open, onClose }) 
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
       setLoading(false);
     }
-  };
+  }, [name, email]);
 
   if (!open) return null;
 
@@ -87,6 +87,8 @@ const EmailCaptureModal: React.FC<EmailCaptureModalProps> = ({ open, onClose }) 
       </div>
     </div>
   );
-};
+});
+
+EmailCaptureModal.displayName = 'EmailCaptureModal';
 
 export default EmailCaptureModal;

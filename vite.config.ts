@@ -18,6 +18,35 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
-      }
+      },
+      build: {
+        // Optimize bundle size
+        minify: 'terser',
+        terserOptions: {
+          compress: {
+            drop_console: true, // Remove console.logs in production
+            drop_debugger: true,
+          },
+        },
+        // Code splitting optimization
+        rollupOptions: {
+          output: {
+            manualChunks: {
+              'react-vendor': ['react', 'react-dom'],
+              'router': ['react-router-dom'],
+            },
+          },
+        },
+        // Smaller chunk size warnings
+        chunkSizeWarningLimit: 1000,
+        // Enable source maps for debugging (disable in production)
+        sourcemap: false,
+        // CSS code splitting
+        cssCodeSplit: true,
+      },
+      // Performance optimizations
+      optimizeDeps: {
+        include: ['react', 'react-dom', 'react-router-dom'],
+      },
     };
 });

@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --system-bg: #08080A;
+  --accent-cyan: #00E5FF;
+  --accent-gold: #BFA35B;
+  --system-border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background-color: var(--system-bg);
+  background-image: 
+    linear-gradient(var(--system-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--system-border) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+* {
+  border-radius: 0px !important;
+}
+
+/* Allow specific elements to have rounded corners */
+.rounded-full {
+  border-radius: 50% !important;
+}
+
+.text-accent { color: var(--accent-cyan); }
+.text-secondary { color: var(--accent-gold); }
+.border-system { border-color: var(--system-border); }
+.bg-system { background-color: var(--system-bg); }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--system-border); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-cyan); }
+
+/* GPU-accelerated scanline animation */
+.scanline {
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 229, 255, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  pointer-events: none;
+  animation: scan 4s linear infinite;
+  will-change: transform;
+}
+
+@keyframes scan {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, 100vh, 0); }
+}
+
+/* Touch-optimized active states */
+a:active, button:active {
+  background-color: rgba(0, 229, 255, 0.1);
+  border-color: var(--accent-cyan);
+  transition: all 0.1s ease;
+}
+
+/* Ensure proper spacing on mobile */
+@media (max-width: 768px) {
+  body::after {
+    opacity: 0.02;
+  }
+}

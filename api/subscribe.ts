@@ -67,7 +67,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             <body style="font-family: sans-serif; line-height: 1.6; color: #333;">
               <h2 style="color: #BFA35B;">Hi ${name.split(' ')[0]},</h2>
               
-              <p>Thank you for your interest in Third Vision AI.</p>
+              <p>Thank you for downloading.</p>
               
               <p style="margin: 30px 0;">
                 <a href="https://${SITE_URL}/resources/ThirdVision-AI%20Enterprise.pdf" 
@@ -79,6 +79,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
               <p style="color: #666; font-size: 14px;">
                 Or view online: <a href="https://${SITE_URL}/#/thank-you" style="color: #BFA35B;">Access Document</a>
               </p>
+              
+              <hr style="border: 0; border-top: 1px solid #ddd; margin: 30px 0;">
+              
+              <div style="background-color: #f9f9f9; border-left: 4px solid #BFA35B; padding: 20px; margin: 30px 0;">
+                <p style="margin: 0 0 15px 0; font-size: 16px; color: #333;">
+                  <strong>Would you like to schedule a 30-minute Scoped Operational Assessment to see how our 'Second Wing' secures your specific infrastructure?</strong>
+                </p>
+                <p style="margin: 15px 0 0 0;">
+                  <a href="mailto:jay@thirdvision.ai?subject=Request%3A%2030-Minute%20Scoped%20Operational%20Assessment&body=Hi%20Jay%2C%0A%0AI'd%20like%20to%20schedule%20a%2030-minute%20Scoped%20Operational%20Assessment.%0A%0AName%3A%20${encodeURIComponent(name)}%0AEmail%3A%20${email}%0A%0AThank%20you" 
+                     style="display: inline-block; background-color: #BFA35B; color: #000; padding: 12px 25px; text-decoration: none; font-weight: bold; font-size: 14px; border-radius: 4px;">
+                    Schedule Your Assessment
+                  </a>
+                </p>
+              </div>
               
               <hr style="border: 0; border-top: 1px solid #ddd; margin: 30px 0;">
               

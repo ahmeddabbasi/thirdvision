@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo, useCallback } from 'react';
 import { Logo } from './Icons';
 
 interface LayoutProps {
@@ -7,7 +7,7 @@ interface LayoutProps {
   showNav?: boolean;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, showNav = true }) => {
+const Layout: React.FC<LayoutProps> = memo(({ children, showNav = true }) => {
   const [timestamp, setTimestamp] = useState(new Date().toISOString());
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -23,6 +23,14 @@ const Layout: React.FC<LayoutProps> = ({ children, showNav = true }) => {
     setMobileMenuOpen(false);
   }, [children]);
 
+  const toggleMenu = useCallback(() => {
+    setMobileMenuOpen(prev => !prev);
+  }, []);
+
+  const closeMenu = useCallback(() => {
+    setMobileMenuOpen(false);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col relative bg-system">
       {/* Header (Responsive) */}
@@ -37,17 +45,18 @@ const Layout: React.FC<LayoutProps> = ({ children, showNav = true }) => {
             <nav className="hidden md:flex space-x-10 text-[13px] font-mono font-semibold uppercase tracking-[0.2em] text-[#BFA35B]">
               <a href="#/origin" className="hover:text-white transition-colors">Origin</a>
               <a href="#/studio" className="hover:text-white transition-colors">Studio</a>
+              <a href="#/recognition" className="hover:text-white transition-colors">Recognition</a>
             </nav>
 
             {/* Mobile Menu Button */}
             <button 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              onClick={toggleMenu}
               className="md:hidden flex flex-col space-y-1 p-2 border border-white/10 hover:border-[#BFA35B] transition-colors"
               aria-label="Toggle menu"
             >
-              <span className="block w-6 h-0.5 bg-[#BFA35B]" style={{width: mobileMenuOpen ? '24px' : '24px'}}></span>
-              <span className="block w-5 h-0.5 bg-[#BFA35B]" style={{width: mobileMenuOpen ? '20px' : '20px'}}></span>
-              <span className="block w-4 h-0.5 bg-[#BFA35B]" style={{width: mobileMenuOpen ? '16px' : '16px'}}></span>
+              <span className="block w-6 h-0.5 bg-[#BFA35B]"></span>
+              <span className="block w-5 h-0.5 bg-[#BFA35B]"></span>
+              <span className="block w-4 h-0.5 bg-[#BFA35B]"></span>
             </button>
           </>
         )}
@@ -72,8 +81,14 @@ const Layout: React.FC<LayoutProps> = ({ children, showNav = true }) => {
             >
               Studio
             </a>
+            <a 
+              href="#/recognition" 
+              className="text-2xl font-mono font-semibold uppercase tracking-[0.2em] text-[#BFA35B] hover:text-white transition-colors active:text-accent"
+            >
+              Recognition
+            </a>
             <button 
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={closeMenu}
               className="mt-8 text-xs font-mono uppercase tracking-widest text-white/40 border border-white/10 px-6 py-3 hover:bg-white hover:text-black transition-all"
             >
               Close
@@ -144,6 +159,8 @@ const Layout: React.FC<LayoutProps> = ({ children, showNav = true }) => {
       </footer>
     </div>
   );
-};
+});
+
+Layout.displayName = 'Layout';
 
 export default Layout;
