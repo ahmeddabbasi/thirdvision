@@ -1,34 +1,21 @@
 
-import React, { useState, useEffect, useRef, memo, useCallback } from 'react';
+import React, { useState, memo, useCallback } from 'react';
 import Layout from '../components/Layout';
 import { ExecutionStack } from '../components/ExecutionStack';
 import EmailCaptureModal from '../components/EmailCaptureModal';
 
 const Home: React.FC = memo(() => {
   const [modalOpen, setModalOpen] = useState(false);
-  const heroRef = useRef<HTMLElement>(null);
   
   const openModal = useCallback(() => setModalOpen(true), []);
   const closeModal = useCallback(() => setModalOpen(false), []);
-
-  useEffect(() => {
-    // Scroll to hero section when page loads
-    if (heroRef.current) {
-      setTimeout(() => {
-        heroRef.current?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }, 100);
-    }
-  }, []);
 
   return (
     <Layout>
       <EmailCaptureModal open={modalOpen} onClose={closeModal} />
       <div className="max-w-5xl mx-auto px-6 md:px-12 py-12 md:py-24 space-y-16 md:space-y-24">
         {/* Hero Section */}
-        <section ref={heroRef} className="space-y-4 md:space-y-6">
+        <section className="space-y-4 md:space-y-6">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
             The End of Identity Risk. The Beginning of Physical Truth.
           </h1>
