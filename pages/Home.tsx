@@ -50,7 +50,10 @@ const Home: React.FC = memo(() => {
           <h2 className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-secondary">The Flight Stability Model™ (Two Wing Theory)</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-xl md:text-2xl font-bold text-accent mb-4">Wing 1: Identity Data (Regulatory Anchored)</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-accent mb-4">
+                Wing 1: Identity Data
+                <span className="block text-lg md:text-xl font-medium mt-1">(Regulatory Anchored)</span>
+              </h3>
               <ul className="list-disc pl-6 text-white/70 space-y-2 text-base md:text-lg">
                 <li>Verifies Presence</li>
                 <li>Ensures Accountability</li>
@@ -58,7 +61,10 @@ const Home: React.FC = memo(() => {
               </ul>
             </div>
             <div>
-              <h3 className="text-xl md:text-2xl font-bold text-accent mb-4">Wing 2: Pattern Data (Coherence-Driven)</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-accent mb-4">
+                Wing 2: Pattern Data
+                <span className="block text-lg md:text-xl font-medium mt-1">(Coherence-Driven)</span>
+              </h3>
               <ul className="list-disc pl-6 text-white/70 space-y-2 text-base md:text-lg">
                 <li>Dynamic & Temporal Intelligence</li>
                 <li>Behavioral Consistency</li>
@@ -68,48 +74,17 @@ const Home: React.FC = memo(() => {
           </div>
         </section>
 
-        {/* The 8-Ball Stack */}
+        {/* Infrastructure Architecture */}
         <section className="space-y-8 md:space-y-12 py-8 md:py-12 border-t border-white/5">
-          <h2 className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-secondary">The 8-Ball Stack (Vertical Architecture)</h2>
-          <div className="space-y-6">
-            <div className="border-l-2 border-accent/30 pl-6">
-              <div className="text-accent font-mono text-sm mb-2">08 | IronWall Mercurial AI</div>
-              <p className="text-white/70 text-base">Adaptive, fluid defense against evolving threats.</p>
-            </div>
-            <div className="border-l-2 border-accent/30 pl-6">
-              <div className="text-accent font-mono text-sm mb-2">07 | SOUL</div>
-              <p className="text-white/70 text-base">The foundational, immutable core of decentralized identity. It acts as the "North Star" of the stack, ensuring every execution event is anchored to a verified, sovereign human presence.</p>
-            </div>
-            <div className="border-l-2 border-accent/30 pl-6">
-              <div className="text-accent font-mono text-sm mb-2">06 | SERS / RaKa</div>
-              <p className="text-white/70 text-base">High-sensitivity analytical layers for total spatial awareness.</p>
-            </div>
-            <div className="border-l-2 border-accent/30 pl-6">
-              <div className="text-accent font-mono text-sm mb-2">05 | Ethosphere OS</div>
-              <p className="text-white/70 text-base">The unified operating environment for physical intelligence.</p>
-            </div>
-            <div className="border-l-2 border-accent/30 pl-6">
-              <div className="text-accent font-mono text-sm mb-2">04 | Third Vision Protocol</div>
-              <p className="text-white/70 text-base">The decentralized backbone removing database liability.</p>
-            </div>
-            <div className="border-l-2 border-accent/30 pl-6">
-              <div className="text-accent font-mono text-sm mb-2">03 | Pattern Orbit</div>
-              <p className="text-white/70 text-base">The dynamic intelligence layer that verifies the flow and intent of movement. It provides real-time validation, ensuring physical actions remain consistent with authorized protocols.</p>
-            </div>
-            <div className="border-l-2 border-accent/30 pl-6">
-              <div className="text-accent font-mono text-sm mb-2">02 | Civic Cube</div>
-              <p className="text-white/70 text-base">Sovereign edge nodes for ground-truth auditability.</p>
-            </div>
-            <div className="border-l-2 border-accent/30 pl-6">
-              <div className="text-accent font-mono text-sm mb-2">01 | Anchor Band</div>
-              <p className="text-white/70 text-base">The secure wearable "Key" anchoring the user to the truth.</p>
-            </div>
-          </div>
+          <h2 className="text-lg md:text-2xl font-bold uppercase tracking-[0.08em] text-secondary">Third Vision AI Infrastructure Architecture</h2>
+          <p className="text-white/70 text-base md:text-lg max-w-4xl leading-relaxed">
+            Third Vision AI operates through a layered execution authority architecture designed to verify human presence, enforce governance constraints, and authorize operational actions across distributed environments. The infrastructure integrates hardware authentication, deterministic policy enforcement, and spatial intelligence layers to ensure that AI systems and automated workflows operate within verified human authority and institutional boundaries.
+          </p>
         </section>
 
         {/* Product Modules (Decision Infrastructure) */}
         <section className="space-y-8 md:space-y-12 py-8 md:py-12 border-t border-white/5">
-          <h2 className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-secondary">Decision Infrastructure</h2>
+          <h2 className="text-xs md:text-sm font-mono font-semibold uppercase tracking-[0.4em] text-secondary">Decision Infrastructure</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {/* Anchor Band */}
             <div className="group border border-white/10 p-6 md:p-8 bg-white/[0.01]">
